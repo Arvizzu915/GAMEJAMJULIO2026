@@ -1,0 +1,79 @@
+{
+    "version": 1,
+    "name": "SimpleMovement",
+    "maps": [
+        {
+            "name": "Keyboard",
+            "id": "1d516c6c-fbd3-46a2-bdd2-dd5ba1a6abf7",
+            "actions": [
+                {
+                    "name": "Drive",
+                    "type": "Value",
+                    "id": "c45f86de-4e4e-4fe0-b9c0-83c36b3e1651",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "2D Vector",
+                    "id": "493ff06b-9d6e-4e4a-8a43-afef76553223",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Drive",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "4e006dda-33ce-4e4e-a256-fdd8aa6a7a3d",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Drive",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "18438b71-4ef3-4bfe-91a9-8cb128c846af",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Drive",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "8800d2ed-c522-4ab4-a4d1-4c24c72c5e17",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Drive",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "b580c106-1ffd-4173-9291-37b1daa08e8f",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Drive",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
