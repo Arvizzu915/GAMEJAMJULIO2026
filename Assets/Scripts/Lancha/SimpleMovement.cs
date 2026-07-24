@@ -100,6 +100,15 @@ public partial class @SimpleMovement: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""UseObject"",
+                    ""type"": ""Button"",
+                    ""id"": ""8dfe8d78-3895-4d0e-b365-aa75156894db"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -157,6 +166,17 @@ public partial class @SimpleMovement: IInputActionCollection2, IDisposable
                     ""action"": ""Drive"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0653da2c-5d26-4619-9cd8-dae6fd736773"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UseObject"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -166,6 +186,7 @@ public partial class @SimpleMovement: IInputActionCollection2, IDisposable
         // Keyboard
         m_Keyboard = asset.FindActionMap("Keyboard", throwIfNotFound: true);
         m_Keyboard_Drive = m_Keyboard.FindAction("Drive", throwIfNotFound: true);
+        m_Keyboard_UseObject = m_Keyboard.FindAction("UseObject", throwIfNotFound: true);
     }
 
     ~@SimpleMovement()
@@ -247,6 +268,7 @@ public partial class @SimpleMovement: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Keyboard;
     private List<IKeyboardActions> m_KeyboardActionsCallbackInterfaces = new List<IKeyboardActions>();
     private readonly InputAction m_Keyboard_Drive;
+    private readonly InputAction m_Keyboard_UseObject;
     /// <summary>
     /// Provides access to input actions defined in input action map "Keyboard".
     /// </summary>
@@ -262,6 +284,10 @@ public partial class @SimpleMovement: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Keyboard/Drive".
         /// </summary>
         public InputAction @Drive => m_Wrapper.m_Keyboard_Drive;
+        /// <summary>
+        /// Provides access to the underlying input action "Keyboard/UseObject".
+        /// </summary>
+        public InputAction @UseObject => m_Wrapper.m_Keyboard_UseObject;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -291,6 +317,9 @@ public partial class @SimpleMovement: IInputActionCollection2, IDisposable
             @Drive.started += instance.OnDrive;
             @Drive.performed += instance.OnDrive;
             @Drive.canceled += instance.OnDrive;
+            @UseObject.started += instance.OnUseObject;
+            @UseObject.performed += instance.OnUseObject;
+            @UseObject.canceled += instance.OnUseObject;
         }
 
         /// <summary>
@@ -305,6 +334,9 @@ public partial class @SimpleMovement: IInputActionCollection2, IDisposable
             @Drive.started -= instance.OnDrive;
             @Drive.performed -= instance.OnDrive;
             @Drive.canceled -= instance.OnDrive;
+            @UseObject.started -= instance.OnUseObject;
+            @UseObject.performed -= instance.OnUseObject;
+            @UseObject.canceled -= instance.OnUseObject;
         }
 
         /// <summary>
@@ -352,5 +384,12 @@ public partial class @SimpleMovement: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnDrive(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "UseObject" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnUseObject(InputAction.CallbackContext context);
     }
 }
