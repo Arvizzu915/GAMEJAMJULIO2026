@@ -4,8 +4,6 @@ using UnityEngine.Tilemaps;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PirateShip : MonoBehaviour
 {
-    [SerializeField] Transform mapLeftDownPoint, mapRightTopPoint;
-    [SerializeField] Tilemap mapTilemap;
     [SerializeField] private float speed, bombInterval;
     private Rigidbody2D rb;
     private float bombIntervalCount;
@@ -31,33 +29,10 @@ public class PirateShip : MonoBehaviour
         Move();
     }
 
-    private Vector3 GetBombPosition()
-    {
-        float xPos = Random.Range(mapLeftDownPoint.position.x, mapRightTopPoint.position.x);
-        float yPos = Random.Range(mapLeftDownPoint.position.y, mapRightTopPoint.position.y);
-
-        //Esto ajusta la posicion al grid/tilemap
-        Vector3Int gridPos = mapTilemap.WorldToCell(new Vector2(xPos, yPos));
-        Vector3 adjustedPos = mapTilemap.CellToWorld(gridPos);
-        adjustedPos.x += 0.5f;
-        adjustedPos.y += 0.5f;
-
-        return (adjustedPos);
-    }
-
     private void DropBomb()
     {
-        Vector3 bombPos = Vector3.zero;
-        for (int i = 0; i < 20; i++)
-        {
-            bombPos = GetBombPosition();
-            if (BombPool.singleton.IsPositionEmpty(bombPos))
-                break;
-            if (i == 19)
-                return;
-        }
-        Bomb newBomb = BombPool.singleton.GetBomb();
-        newBomb.transform.position = bombPos;
+        Bomb newBomb = ObstaclePool.singleton.GetBomb();
+        newBomb.transform.position = LevelManager.singleton.GetRandomAvailableSpot();
         newBomb.StartLife();
     }
 

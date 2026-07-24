@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class Bomb : MonoBehaviour
+public class Shark : MonoBehaviour
 {
     [SerializeField] private int damage;
     [SerializeField] private float activeTime;
     private float activeTimeCount;
 
-    public void StartLife()
+    public void OnSpawn()
     {
         gameObject.SetActive(true);
         activeTimeCount = 0;
@@ -16,6 +16,6 @@ public class Bomb : MonoBehaviour
     {
         activeTimeCount += Time.deltaTime;
         if (activeTimeCount >= activeTime)
-            ObstaclePool.singleton.ReturnBombToPool(this);
+            ObstaclePool.singleton.ReturnSharkToPool(this);
     }
 }

@@ -258,11 +258,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c24d2c5612d32c42bd124c8de205879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PirateShip
-  mapLeftDownPoint: {fileID: 322798457}
-  mapRightTopPoint: {fileID: 182470014}
-  mapTilemap: {fileID: 521560369}
   speed: 1
-  bombInterval: 0.5
+  bombInterval: 3
 --- !u!50 &437482214
 Rigidbody2D:
   serializedVersion: 5
@@ -373,6 +370,7 @@ GameObject:
   - component: {fileID: 521560367}
   - component: {fileID: 521560369}
   - component: {fileID: 521560368}
+  - component: {fileID: 521560370}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -489,6 +487,65 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &521560370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521560366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38230f3c37a57bb4baecc7cf7653c2f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelManager
+  mapLeftDownPoint: {x: -9, y: -5}
+  mapRightTopPoint: {x: 9, y: 5}
+--- !u!1 &589447997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 589447999}
+  - component: {fileID: 589447998}
+  m_Layer: 0
+  m_Name: SharkSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &589447998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589447997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada77e633536de14fb65718991b7bb6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SharkSpawner
+  spawnRate: 1
+--- !u!4 &589447999
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589447997}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.42702, y: 1.006, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &845048572
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,27 +555,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 845048574}
-  - component: {fileID: 845048573}
+  - component: {fileID: 845048575}
   m_Layer: 0
-  m_Name: BombPool
+  m_Name: ObstaclePool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &845048573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845048572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eae21f2c8d43eb42b63ad2f71f9f0dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BombPool
-  bombPrefab: {fileID: 4016362827897151096, guid: ecb7ba9032496154ba869544ed0ec2dd, type: 3}
 --- !u!4 &845048574
 Transform:
   m_ObjectHideFlags: 0
@@ -534,6 +578,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &845048575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845048572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62936fc4a0073334a9be0be23e26ef21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObstaclePool
+  bombPrefab: {fileID: 4016362827897151096, guid: ecb7ba9032496154ba869544ed0ec2dd, type: 3}
+  sharkPrefab: {fileID: 4016362827897151096, guid: d2a169b951b5fac4fb050030a8ce14d6, type: 3}
 --- !u!1 &1477604677
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,3 +694,4 @@ SceneRoots:
   - {fileID: 182470014}
   - {fileID: 415378609}
   - {fileID: 845048574}
+  - {fileID: 589447999}
