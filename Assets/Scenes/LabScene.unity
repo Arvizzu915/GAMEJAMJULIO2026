@@ -673,6 +673,7 @@ GameObject:
   - component: {fileID: 160060935}
   - component: {fileID: 160060942}
   - component: {fileID: 160060943}
+  - component: {fileID: 160060944}
   m_Layer: 0
   m_Name: Lancha2
   m_TagString: Player
@@ -887,6 +888,7 @@ MonoBehaviour:
   currentGente: 0
   powerMeter: 0
   powerLimit: 10
+  powerUpManager: {fileID: 160060944}
 --- !u!114 &160060943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -900,6 +902,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LanchaManager
   genteManager: {fileID: 160060942}
+--- !u!114 &160060944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160060934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f768014ee81b9234f978324190b1c2ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PowerUps
+  powerMeter: 0
+  powerLimit: 10
 --- !u!1 &170521768
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,22 +5,15 @@ public class GenteManager : MonoBehaviour
     [SerializeField] private SpriteRenderer[] genteSpots;
     [SerializeField] private int currentGente = 0, powerMeter = 0, powerLimit = 10;
 
-    public void PickUpGente()
+    [SerializeField] private PowerUps powerUpManager;
+
+    public void PickUpGente(int power)
     {
         genteSpots[currentGente].enabled = true;
 
         currentGente++;
-        powerMeter++;
 
-        if (powerMeter >= powerLimit)
-        {
-            PowerUp();
-        }
-    }
-
-    private void PowerUp()
-    {
-        //power up
+        powerUpManager.GetPower(power);
     }
 
     public void Crash(int Damage)
