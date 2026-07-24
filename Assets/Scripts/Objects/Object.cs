@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Object : MonoBehaviour
+public abstract class Weapon : MonoBehaviour
 {
-
+    public abstract void Use(LanchaManager manager);
 }

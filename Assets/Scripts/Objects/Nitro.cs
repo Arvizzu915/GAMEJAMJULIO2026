@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class Missile : Weapon
+public class Nitro : Weapon
 {
     public override void Use(LanchaManager manager)
     {
-        //instantiate a missile from missile pool
+        
     }
 }

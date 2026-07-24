@@ -109,6 +109,24 @@ public partial class @SimpleMovement: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Use"",
+                    ""type"": ""Button"",
+                    ""id"": ""4e7601fe-44a0-4bc5-a45d-5691846b737b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Restart"",
+                    ""type"": ""Button"",
+                    ""id"": ""9a3a37de-4085-42e6-a581-b216189abbda"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -177,6 +195,28 @@ public partial class @SimpleMovement: IInputActionCollection2, IDisposable
                     ""action"": ""UseObject"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""03b61557-813e-46e3-8fb4-c6043a1bd5a3"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Use"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b15fe14a-fbc1-4484-bf97-a5e541346527"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -187,6 +227,8 @@ public partial class @SimpleMovement: IInputActionCollection2, IDisposable
         m_Keyboard = asset.FindActionMap("Keyboard", throwIfNotFound: true);
         m_Keyboard_Drive = m_Keyboard.FindAction("Drive", throwIfNotFound: true);
         m_Keyboard_UseObject = m_Keyboard.FindAction("UseObject", throwIfNotFound: true);
+        m_Keyboard_Use = m_Keyboard.FindAction("Use", throwIfNotFound: true);
+        m_Keyboard_Restart = m_Keyboard.FindAction("Restart", throwIfNotFound: true);
     }
 
     ~@SimpleMovement()
@@ -269,6 +311,8 @@ public partial class @SimpleMovement: IInputActionCollection2, IDisposable
     private List<IKeyboardActions> m_KeyboardActionsCallbackInterfaces = new List<IKeyboardActions>();
     private readonly InputAction m_Keyboard_Drive;
     private readonly InputAction m_Keyboard_UseObject;
+    private readonly InputAction m_Keyboard_Use;
+    private readonly InputAction m_Keyboard_Restart;
     /// <summary>
     /// Provides access to input actions defined in input action map "Keyboard".
     /// </summary>
@@ -288,6 +332,14 @@ public partial class @SimpleMovement: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Keyboard/UseObject".
         /// </summary>
         public InputAction @UseObject => m_Wrapper.m_Keyboard_UseObject;
+        /// <summary>
+        /// Provides access to the underlying input action "Keyboard/Use".
+        /// </summary>
+        public InputAction @Use => m_Wrapper.m_Keyboard_Use;
+        /// <summary>
+        /// Provides access to the underlying input action "Keyboard/Restart".
+        /// </summary>
+        public InputAction @Restart => m_Wrapper.m_Keyboard_Restart;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -320,6 +372,12 @@ public partial class @SimpleMovement: IInputActionCollection2, IDisposable
             @UseObject.started += instance.OnUseObject;
             @UseObject.performed += instance.OnUseObject;
             @UseObject.canceled += instance.OnUseObject;
+            @Use.started += instance.OnUse;
+            @Use.performed += instance.OnUse;
+            @Use.canceled += instance.OnUse;
+            @Restart.started += instance.OnRestart;
+            @Restart.performed += instance.OnRestart;
+            @Restart.canceled += instance.OnRestart;
         }
 
         /// <summary>
@@ -337,6 +395,12 @@ public partial class @SimpleMovement: IInputActionCollection2, IDisposable
             @UseObject.started -= instance.OnUseObject;
             @UseObject.performed -= instance.OnUseObject;
             @UseObject.canceled -= instance.OnUseObject;
+            @Use.started -= instance.OnUse;
+            @Use.performed -= instance.OnUse;
+            @Use.canceled -= instance.OnUse;
+            @Restart.started -= instance.OnRestart;
+            @Restart.performed -= instance.OnRestart;
+            @Restart.canceled -= instance.OnRestart;
         }
 
         /// <summary>
@@ -391,5 +455,19 @@ public partial class @SimpleMovement: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnUseObject(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Use" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnUse(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Restart" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRestart(InputAction.CallbackContext context);
     }
 }

@@ -6,20 +6,20 @@ public class InputManager : MonoBehaviour
 {
     public static InputManager Instance;
 
-    public InputActions inputs;
-
-    private void Awake()
+    public SimpleMovement SimpleMove;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Awake()
     {
         Instance = this;
 
-        inputs = new InputActions();
+        SimpleMove = new SimpleMovement();
+        SimpleMove.Enable();
 
-        inputs.Playing.Enable();
     }
 
     private void Start()
     {
-        inputs.Playing.Restart.performed += Restart;
+        SimpleMove.Keyboard.Restart.performed += Restart;
     }
 
     public void Restart(InputAction.CallbackContext ctx)

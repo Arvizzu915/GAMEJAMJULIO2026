@@ -8,21 +8,17 @@ public class LanchaMovementSimple : MonoBehaviour
 
     Vector2 direction = Vector2.zero;
 
-    private SimpleMovement SimpleMove;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    InputAction move;
+
+    private void Start()
     {
-        SimpleMove = new SimpleMovement();
-        SimpleMove.Enable();
-        
+        move = InputManager.Instance.SimpleMove.Keyboard.Drive;
     }
 
     // Update is called once per frame
     void Update()
     {
-        direction = SimpleMove.Keyboard.Drive.ReadValue<Vector2>();
-        
-        
+        direction = move.ReadValue<Vector2>();
     }
 
     private void FixedUpdate()
