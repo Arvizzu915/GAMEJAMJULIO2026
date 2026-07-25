@@ -8,6 +8,8 @@ public class LanchaMovementSimple : MonoBehaviour
     [SerializeField] private float acceleration;
 
     public Vector2 direction = Vector2.zero;
+    Vector2 movedir;
+    float rotationAngle;
 
     InputAction move;
 
@@ -20,9 +22,23 @@ public class LanchaMovementSimple : MonoBehaviour
     void Update()
     {
         direction = move.ReadValue<Vector2>();
+        
+        if (direction != Vector2.zero)
+        {
+        movedir = direction;
+            
+        }
+        
         float t = .5f*Time.deltaTime;
-        Quaternion targetRotation= Quaternion.Euler(new Vector3(0, 0, RotationDirection(direction)));
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation,300*Time.deltaTime);
+        if (movedir != Vector2.zero)
+        {
+            
+            Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, RotationAngle(movedir)));
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 300 * Time.deltaTime);
+
+        }
+        
+        
         
         
     }
@@ -37,10 +53,9 @@ public class LanchaMovementSimple : MonoBehaviour
         rb.AddForce(direction * acceleration * speedBoost * Time.fixedDeltaTime);
     }
 
-    float RotationDirection(Vector2 direction)
+    float RotationAngle(Vector2 inputDirection)
     {
-
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(inputDirection.y, inputDirection.x) * Mathf.Rad2Deg;
 
         return angle;
     }
