@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class Missile : Weapon
+[CreateAssetMenu(fileName = "Object", menuName = "Object/missile")]
+public class Missile : ObjectSO
 {
     public override void Use(LanchaManager manager)
     {
