@@ -27,6 +27,11 @@ public class InputManager : MonoBehaviour
         inputs.Keyboard.Restart.performed += Restart;
     }
 
+    private void OnDisable()
+    {
+        inputs.Disable();
+    }
+
     public void Restart(InputAction.CallbackContext ctx)
     {
         if (ctx.performed)
