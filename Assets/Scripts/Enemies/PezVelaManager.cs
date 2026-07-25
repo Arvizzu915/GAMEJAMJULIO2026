@@ -13,6 +13,8 @@ public class PezVelaManager : MonoBehaviour
 
     private void OnEnable()
     {
+        Debug.Log("pez");
+
         warning.SetActive(true);
 
         pezVela.transform.position = transform.position;

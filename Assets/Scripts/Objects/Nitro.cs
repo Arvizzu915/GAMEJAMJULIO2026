@@ -8,6 +8,6 @@ public class Nitro : ObjectSO
     public override void Use(LanchaManager manager)
     {
         Debug.Log("Nitro");
-        manager.lanchaMovement.rb.AddForce(manager.transform.up * nitroForce, ForceMode2D.Impulse);
+        manager.lanchaMovement.rb.AddForce(manager.lanchaMovement.boatModel.transform.up * nitroForce, ForceMode2D.Impulse);
     }
 }

@@ -108,7 +108,7 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         generateAfterLoad = true;
-        SceneManager.LoadScene("LevelManager");
+        SceneManager.LoadScene("LevelStarted");
     }
 
     public void GenerateLevel()
