@@ -45,7 +45,10 @@ public class GenteManager : MonoBehaviour
         for (int i = 0; i < Damage; i++)
         {
             currentGente--;
-            genteSpots[currentGente].enabled = false;
+            if (currentGente >= 0)
+            {
+                genteSpots[currentGente].enabled = false;
+            }
         }
     }
 

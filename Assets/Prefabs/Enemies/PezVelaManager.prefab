@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PezVelaManager
   speed: 80
-  spawnLimits: {x: 27, y: 12}
+  spawnLimits: {x: 13, y: 4.3}
   warning: {fileID: 3052382018555565594}
   pezVela: {fileID: 1914527180425491109}
 --- !u!1 &3052382018555565594
@@ -214,13 +214,14 @@ GameObject:
   - component: {fileID: 5479840824165615419}
   - component: {fileID: 4419884732767166759}
   - component: {fileID: 1914527180425491109}
+  - component: {fileID: 518357071930562759}
   m_Layer: 0
   m_Name: PezVela
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6394034804874677741
 Transform:
   m_ObjectHideFlags: 0
@@ -229,13 +230,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9143312686849165236}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -1.25, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6145044790555590071}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &5231066054480858716
 SpriteRenderer:
   serializedVersion: 2
@@ -283,9 +284,9 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 31
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e38383f2d95e2964c8c895c4a245dfc6, type: 3}
   m_Color: {r: 0.24586153, g: 0.5858421, b: 0.8018868, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -370,4 +371,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c278c99e01cd3a14a8a520a16c347b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PezVelaObject
+  damage: 2
+  animator: {fileID: 0}
   rb: {fileID: 4419884732767166759}
+--- !u!95 &518357071930562759
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9143312686849165236}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e6db13a7c1c6dc14ba4a259cbdf6b139, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

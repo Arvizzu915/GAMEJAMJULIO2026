@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class LanchaManager : MonoBehaviour
 {
+    public static LanchaManager instance;
+
     public GenteManager genteManager;
     public LanchaMovementSimple lanchaMovement;
     public GenericPool missilePool, lifesaverPool;
@@ -11,6 +13,21 @@ public class LanchaManager : MonoBehaviour
     private Vector3 objectShootDir;
     private float godModeTimeCount, objectSpawnerTimeCount;
     private bool isGodMode;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+
+            DontDestroyOnLoad(gameObject);
+        }
+
+    }
 
     public void ActivateGodMode()
     {

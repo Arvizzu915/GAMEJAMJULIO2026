@@ -1,8 +1,10 @@
 using UnityEngine;
 
-public class PezVelaObject : MonoBehaviour
+public class PezVelaObject :ICrashable
 {
     PezVelaManager manager;
+
+    [SerializeField] private Animator animator;
 
     [SerializeField] Rigidbody2D rb;
 
@@ -20,6 +22,7 @@ public class PezVelaObject : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.GetComponent<GenteManager>().Crash(2);
+            rb.linearVelocity = Vector2.zero;
         }
 
         manager.Deactivate();
