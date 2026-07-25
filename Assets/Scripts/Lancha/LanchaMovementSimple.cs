@@ -6,7 +6,7 @@ public class LanchaMovementSimple : MonoBehaviour
     public GameObject boatModel;
     public Rigidbody2D rb;
     public float speedBoost = 1;
-    [SerializeField] private float acceleration;
+    public float acceleration;
 
     public Vector2 direction = Vector2.zero;
     Vector2 movedir;

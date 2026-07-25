@@ -9,7 +9,7 @@ public class PowerUps : MonoBehaviour
     [SerializeField] LanchaMovementSimple movement;
 
     
-    Slider powerBar;
+    [SerializeField] Slider powerBar;
 
     private bool inRescueTime = false;
 
