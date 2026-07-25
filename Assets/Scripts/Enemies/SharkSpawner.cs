@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SharkSpawner : MonoBehaviour
 {
-    [SerializeField] private float spawnRate;
+    [SerializeField] private float spawnRate, spawnRandomDifference;
     private float spawnRateTimer;
 
     private void Awake()
@@ -16,7 +16,7 @@ public class SharkSpawner : MonoBehaviour
         if (spawnRateTimer >= spawnRate)
         {
             SpawnShark();
-            spawnRateTimer = 0f;
+            spawnRateTimer = Random.Range(-spawnRandomDifference, spawnRandomDifference);
         }
     }
 

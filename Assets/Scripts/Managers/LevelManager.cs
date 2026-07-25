@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager singleton;
-    [SerializeField] Vector2 mapLeftDownPoint, mapRightTopPoint;
+    public Vector2 mapLeftDownPoint, mapRightTopPoint;
     private List<Vector2> availableMapSpots = new List<Vector2>();
     private List<Vector2> occupiedMapSpots = new List<Vector2>();
     private Tilemap mapTilemap;
@@ -25,6 +25,14 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public float GetRandomRow()
+    {
+        Vector3Int leftDownGridPoint = mapTilemap.WorldToCell(mapLeftDownPoint);
+        Vector3Int rightTopGridPoint = mapTilemap.WorldToCell(mapRightTopPoint);
+        int randomRow = Random.Range(leftDownGridPoint.y, rightTopGridPoint.y);
+        return randomRow + 0.5f;
+    }
+
     public Vector2 GetRandomAvailableSpot()
     {
         //If there are elements in available spots, returns a random element from the list
@@ -36,13 +44,14 @@ public class LevelManager : MonoBehaviour
         return spot;
     }
 
-    public void OccupySpot(Vector3 spot)
+    public void OccupySpot(Transform spotTransform)
     {
         //A preset object in map returns its position to save it in the occupied positions list
-        Vector3Int gridPos = mapTilemap.WorldToCell(spot);
+        Vector3Int gridPos = mapTilemap.WorldToCell(spotTransform.position);
         Vector2 fixedPos = mapTilemap.CellToWorld(gridPos);
         fixedPos.x += 0.5f;
         fixedPos.y += 0.5f;
+        spotTransform.position = fixedPos;
 
         availableMapSpots.Remove(fixedPos);
         occupiedMapSpots.Add(fixedPos);

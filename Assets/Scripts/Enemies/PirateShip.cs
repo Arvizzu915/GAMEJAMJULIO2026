@@ -5,12 +5,30 @@ using UnityEngine.Tilemaps;
 public class PirateShip : MonoBehaviour
 {
     [SerializeField] private float speed, bombInterval;
+    [SerializeField] SpriteRenderer sr;
+    [SerializeField] Animator animator;
     private Rigidbody2D rb;
-    private float bombIntervalCount;
+    private float bombIntervalCount, orientation;
 
     private void Awake()
     {
         TryGetComponent(out rb);
+    }
+
+    public void OnSpawn(bool isGoingRight)
+    {
+        if (isGoingRight)
+        {
+            orientation = 1f;
+            sr.flipX = true;
+        }
+        else
+        {
+
+            orientation = -1f;
+            sr.flipX = false;
+        }
+        animator.Play("ShipIdle");
         bombIntervalCount = 0f;
     }
 
@@ -20,7 +38,7 @@ public class PirateShip : MonoBehaviour
         if (bombIntervalCount >= bombInterval)
         {
             bombIntervalCount = 0f;
-            DropBomb();
+            animator.Play("ShipShoot");
         }
     }
 
@@ -29,15 +47,8 @@ public class PirateShip : MonoBehaviour
         Move();
     }
 
-    private void DropBomb()
-    {
-        Bomb newBomb = ObstaclePool.singleton.GetBomb();
-        newBomb.transform.position = LevelManager.singleton.GetRandomAvailableSpot();
-        newBomb.StartLife();
-    }
-
     private void Move()
     {
-        rb.MovePosition(transform.position + transform.up * speed * Time.fixedDeltaTime);
+        rb.MovePosition(transform.position + transform.right * orientation * speed * Time.fixedDeltaTime);
     }
 }

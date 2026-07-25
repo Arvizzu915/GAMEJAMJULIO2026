@@ -1,25 +1,13 @@
 fileFormatVersion: 2
-guid: ddd980a31ee47b34dae57b1e0672527a
+guid: 73549c96c767f584aaed8d15c61bce8a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7462316434291467223
-    second: sharkemerge_0
+      213: 8815515350934775756
+    second: sharkbite_0
   - first:
-      213: -5241555936206214544
-    second: sharkemerge_1
-  - first:
-      213: 2214499519554079222
-    second: sharkemerge_2
-  - first:
-      213: 4757045375203632722
-    second: sharkemerge_3
-  - first:
-      213: 1702518432758306238
-    second: sharkemerge_4
-  - first:
-      213: 1374574714768343100
-    second: sharkemerge_5
+      213: -6006165962833895806
+    second: sharkbite_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sharkemerge_0
+      name: sharkbite_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7d3a08b82497f8760800000000000000
-      internalID: 7462316434291467223
+      spriteID: cc7687c4180075a70800000000000000
+      internalID: 8815515350934775756
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sharkemerge_1
+      name: sharkbite_1
       rect:
         serializedVersion: 2
         x: 32
@@ -165,96 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 07aa610a5a04247b0800000000000000
-      internalID: -5241555936206214544
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sharkemerge_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6f94b42849b7bbe10800000000000000
-      internalID: 2214499519554079222
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sharkemerge_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2566d69909b640240800000000000000
-      internalID: 4757045375203632722
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sharkemerge_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eb51d188e7f80a710800000000000000
-      internalID: 1702518432758306238
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sharkemerge_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c3040079b68731310800000000000000
-      internalID: 1374574714768343100
+      spriteID: 28e5e3bf0efc5aca0800000000000000
+      internalID: -6006165962833895806
       vertices: []
       indices: 
       edges: []
@@ -263,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8b8f94b644d3f8143a7778fa0ff1ed3d
+    spriteID: 6b2a2d63c9ff0fd4097cc36f7deaceaa
     internalID: 0
     vertices: []
     indices: 
@@ -273,14 +173,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      sharkemerge_0: 7462316434291467223
-      sharkemerge_1: -5241555936206214544
-      sharkemerge_2: 2214499519554079222
-      sharkemerge_3: 4757045375203632722
-      sharkemerge_4: 1702518432758306238
-      sharkemerge_5: 1374574714768343100
+      sharkbite_0: 8815515350934775756
+      sharkbite_1: -6006165962833895806
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
