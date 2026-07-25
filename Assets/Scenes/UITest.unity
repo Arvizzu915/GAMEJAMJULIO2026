@@ -679,6 +679,7 @@ MonoBehaviour:
   powerMeter: 0
   powerLimit: 10
   powerUpManager: {fileID: 0}
+  bubbleAnimator: {fileID: 0}
 --- !u!114 &160060943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,6 +694,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LanchaManager
   genteManager: {fileID: 160060942}
   lanchaMovement: {fileID: 0}
+  missilePool: {fileID: 0}
+  lifesaverPool: {fileID: 0}
 --- !u!60 &160060944
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1394,6 +1397,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf2e631b7786f04bbdcb5b6fe5ba798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gente
+  drownTime: 8
+  animOverrides: []
+  animator: {fileID: 0}
 --- !u!50 &449238491
 Rigidbody2D:
   serializedVersion: 5
@@ -2111,10 +2117,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2543,6 +2549,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf2e631b7786f04bbdcb5b6fe5ba798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gente
+  drownTime: 8
+  animOverrides: []
+  animator: {fileID: 0}
 --- !u!50 &1066152386
 Rigidbody2D:
   serializedVersion: 5
@@ -2981,6 +2990,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf2e631b7786f04bbdcb5b6fe5ba798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gente
+  drownTime: 8
+  animOverrides: []
+  animator: {fileID: 0}
 --- !u!50 &1258041015
 Rigidbody2D:
   serializedVersion: 5
@@ -3236,6 +3248,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf2e631b7786f04bbdcb5b6fe5ba798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gente
+  drownTime: 8
+  animOverrides: []
+  animator: {fileID: 0}
 --- !u!50 &1316393738
 Rigidbody2D:
   serializedVersion: 5
@@ -3885,9 +3900,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 0.055555556
     width: 1
-    height: 1
+    height: 0.8888889
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 112
@@ -4457,6 +4472,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf2e631b7786f04bbdcb5b6fe5ba798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gente
+  drownTime: 8
+  animOverrides: []
+  animator: {fileID: 0}
 --- !u!50 &1560984875
 Rigidbody2D:
   serializedVersion: 5
@@ -5334,6 +5352,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf2e631b7786f04bbdcb5b6fe5ba798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gente
+  drownTime: 8
+  animOverrides: []
+  animator: {fileID: 0}
 --- !u!50 &1775777342
 Rigidbody2D:
   serializedVersion: 5
@@ -20665,6 +20686,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf2e631b7786f04bbdcb5b6fe5ba798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gente
+  drownTime: 8
+  animOverrides: []
+  animator: {fileID: 0}
 --- !u!50 &1897491040
 Rigidbody2D:
   serializedVersion: 5
@@ -20845,6 +20869,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf2e631b7786f04bbdcb5b6fe5ba798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gente
+  drownTime: 8
+  animOverrides: []
+  animator: {fileID: 0}
 --- !u!50 &1906237423
 Rigidbody2D:
   serializedVersion: 5
@@ -21025,6 +21052,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf2e631b7786f04bbdcb5b6fe5ba798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gente
+  drownTime: 8
+  animOverrides: []
+  animator: {fileID: 0}
 --- !u!50 &2033540468
 Rigidbody2D:
   serializedVersion: 5
@@ -21208,7 +21238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.4174986, y: -503.3}
+  m_AnchoredPosition: {x: -474, y: -481}
   m_SizeDelta: {x: 814.9816, y: -25.0021}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2053610652
