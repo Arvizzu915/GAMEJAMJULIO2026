@@ -13,6 +13,7 @@ public class Gente : MonoBehaviour
 
     private void OnEnable()
     {
+        drownTimer = Time.time;
         active = true;
         SetSkins();
         animator.Play("idle");
@@ -22,9 +23,7 @@ public class Gente : MonoBehaviour
     {
         if (!active) return;
 
-        drownTime -= Time.deltaTime;
-
-        if (drownTime <= 0)
+        if (Time.time - drownTimer >= drownTime)
         {
             Drown();
         }
