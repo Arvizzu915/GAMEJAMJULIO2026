@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PowerUps : MonoBehaviour
 {
     public float powerMeter = 0, powerLimit;
+
+    Slider powerBar;
 
     private bool inRescueTime = false;
 
@@ -16,13 +19,14 @@ public class PowerUps : MonoBehaviour
         if (inRescueTime)
         {
             powerMeter -= Time.deltaTime;
+            UpdateBar();
         }
     }
 
     public void GetPower(int power)
     {
         powerMeter += power;
-
+        UpdateBar();
         if (powerMeter >= powerLimit)
         {
             RescueTime();
@@ -39,5 +43,10 @@ public class PowerUps : MonoBehaviour
     {
         inRescueTime = false;
         powerMeter = 0;
+    }
+
+    void UpdateBar()
+    {
+        powerBar.value = powerMeter;
     }
 }
