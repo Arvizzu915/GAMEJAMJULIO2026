@@ -4,6 +4,8 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
 
+    public GenericPool gentePool;
+
     public int peopleRescuedSoFar = 0;
     public float timeSoFar = 0;
 
