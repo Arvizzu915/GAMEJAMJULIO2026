@@ -7,6 +7,7 @@ using System.Collections;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager singleton;
+
     public Vector2 mapLeftDownPoint, mapRightTopPoint;
     private List<Vector2> availableMapSpots = new List<Vector2>();
     private List<Vector2> occupiedMapSpots = new List<Vector2>();
@@ -19,6 +20,9 @@ public class LevelManager : MonoBehaviour
     public int peopleToRescue = 0, peopleRescued = 0;
     public float timeInLevel = 0;
     public bool inGame = false;
+    public float levelTime = 45;
+
+    [SerializeField] private GameObject rescueImage, timeImage;
 
     private void Awake()
     {
@@ -34,6 +38,17 @@ public class LevelManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+    }
+
+    private IEnumerator LevelTimer()
+    {
+        Debug.Log("level start");
+
+        yield return new WaitForSeconds(levelTime);
+
+        Debug.Log("level finish");
+
+        StartCoroutine(WinLevelScreen());
     }
 
     private void OnEnable()
@@ -66,7 +81,13 @@ public class LevelManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (generateAfterLoad && scene.name == "LevelManager")
+        if (scene.name != "LevelManager")
+            return;
+
+        rescueImage = FindFirstObjectByType<RescueImageReference>(FindObjectsInactive.Include).gameObject;
+        timeImage = FindFirstObjectByType<TimeImage>(FindObjectsInactive.Include).gameObject;
+
+        if (generateAfterLoad)
         {
             generateAfterLoad = false;
             GenerateLevel();
@@ -75,6 +96,12 @@ public class LevelManager : MonoBehaviour
 
     private IEnumerator WinLevelScreen()
     {
+        Debug.Log(timeImage);
+        Debug.Log(ScoreManager.instance);
+        Debug.Log(GenteManager.instance);
+
+        timeImage.SetActive(true);
+
         inGame = false;
         ScoreManager.instance.RegisterLevelData(GenteManager.instance.currentGente, timeInLevel);
 
@@ -86,6 +113,8 @@ public class LevelManager : MonoBehaviour
 
     public void GenerateLevel()
     {
+        rescueImage.SetActive(true);
+
         timeInLevel = 0;
         peopleRescued = 0;
 
@@ -105,6 +134,8 @@ public class LevelManager : MonoBehaviour
         }
 
         inGame = true;
+
+        StartCoroutine(LevelTimer());
     }
 
     public float GetRandomRow()

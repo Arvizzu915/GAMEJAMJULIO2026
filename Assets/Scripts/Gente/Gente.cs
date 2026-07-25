@@ -13,6 +13,8 @@ public class Gente : MonoBehaviour
 
     private void OnEnable()
     {
+        drownTime = LevelManager.singleton.levelTime;
+
         drownTimer = Time.time;
         active = true;
         SetSkins();
