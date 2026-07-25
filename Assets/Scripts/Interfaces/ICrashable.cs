@@ -3,7 +3,7 @@ using UnityEngine;
 public class ICrashable : MonoBehaviour
 {
     [SerializeField] private int damage;
-    [SerializeField] AudioSource rock;
+    
 
 
     
@@ -16,7 +16,7 @@ public class ICrashable : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            rock.Play();
+            
             CrashWithPlayer(collision.gameObject.GetComponent<LanchaManager>());
         }
     }

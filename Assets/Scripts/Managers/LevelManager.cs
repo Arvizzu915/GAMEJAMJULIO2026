@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
@@ -24,6 +25,11 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private GameObject rescueImage, timeImage;
 
+    public AudioClip music, turboMusic;
+    public AudioSource audioSource;
+
+    
+
     private void Awake()
     {
         //This ensures there is only one instance of this class
@@ -40,10 +46,10 @@ public class LevelManager : MonoBehaviour
 
     }
 
+    
+
     private IEnumerator LevelTimer()
     {
-        Debug.Log("level start");
-
         yield return new WaitForSeconds(levelTime);
 
         Debug.Log("level finish");
@@ -113,6 +119,9 @@ public class LevelManager : MonoBehaviour
 
     public void GenerateLevel()
     {
+        audioSource.clip = music;
+        audioSource.Play();
+
         rescueImage.SetActive(true);
 
         timeInLevel = 0;
@@ -122,8 +131,8 @@ public class LevelManager : MonoBehaviour
         Instantiate(levelPresets[levelIndex]);
 
 
-        int numberOfPeople = Random.Range(1, 5);
-        peopleToRescue = numberOfPeople;
+        int numberOfPeople = Random.Range(20, 30);
+        peopleToRescue = numberOfPeople - 5;
 
         for (int i = 0; i < numberOfPeople; i++)
         {

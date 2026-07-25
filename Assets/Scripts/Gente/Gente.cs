@@ -11,14 +11,22 @@ public class Gente : MonoBehaviour
     [SerializeField] private AnimatorOverrideController[] animOverrides;
     [SerializeField] private Animator animator;
 
+    [SerializeField] private AudioSource audioSource;
+
     private void OnEnable()
     {
-        drownTime = LevelManager.singleton.levelTime;
-
         drownTimer = Time.time;
         active = true;
+
         SetSkins();
-        animator.Play("idle");
+
+        animator.Rebind();
+        animator.Play("idle", 0, 0f);
+    }
+
+    private void Start()
+    {
+        drownTime = LevelManager.singleton.levelTime;
     }
 
     private void Update()
@@ -45,6 +53,7 @@ public class Gente : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            audioSource.Play();
             collision.GetComponent<GenteManager>().PickUpGente(powerMeter);
             gameObject.SetActive(false);
         }
@@ -53,6 +62,7 @@ public class Gente : MonoBehaviour
     public void SetSkins()
     {
         int index = Random.Range(0, animOverrides.Length);
+
 
         animator.runtimeAnimatorController = animOverrides[index];
     }

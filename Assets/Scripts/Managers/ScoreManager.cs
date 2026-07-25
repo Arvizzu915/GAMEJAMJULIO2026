@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
@@ -8,6 +9,9 @@ public class ScoreManager : MonoBehaviour
 
     public int peopleRescuedSoFar = 0;
     public float timeSoFar = 0;
+
+    public GameObject panelLose;
+    public TextMeshProUGUI time, points;
 
     private void Awake()
     {
@@ -20,6 +24,14 @@ public class ScoreManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+    }
+
+    public void Lose()
+    {
+        time.text = timeSoFar.ToString();
+        points.text = peopleRescuedSoFar.ToString();
+
+        panelLose.SetActive(true);
     }
 
     public void RegisterLevelData(int people, float Time)

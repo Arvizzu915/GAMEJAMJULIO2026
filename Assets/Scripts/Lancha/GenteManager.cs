@@ -11,6 +11,9 @@ public class GenteManager : MonoBehaviour
     public Animator bubbleAnimator;
     private bool hasBubble;
 
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip crash;
+
     private void Awake()
     {
         instance = this;
@@ -35,10 +38,13 @@ public class GenteManager : MonoBehaviour
             ToggleBubble(false);
             return;
         }
-        Debug.Log("ME DUELE");
+
+        audioSource.clip = crash;
+        audioSource.Play();
+
         if (currentGente <= 0)
         {
-            //lose
+            ScoreManager.instance.Lose();
             return;
         }
 
