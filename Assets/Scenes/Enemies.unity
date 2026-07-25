@@ -688,6 +688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c278c99e01cd3a14a8a520a16c347b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PezVelaObject
+  manager: {fileID: 0}
   rb: {fileID: 123512019}
 --- !u!50 &123512019
 Rigidbody2D:
@@ -3164,6 +3165,7 @@ MonoBehaviour:
   spawnLimits: {x: 27, y: 12}
   warning: {fileID: 417531864}
   pezVela: {fileID: 123512018}
+  direction: 1
 --- !u!212 &1187698072
 SpriteRenderer:
   serializedVersion: 2

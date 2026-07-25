@@ -3,18 +3,16 @@ using UnityEngine.InputSystem;
 
 public class LanchaMovementSimple : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D rb;
+    public Rigidbody2D rb;
     [SerializeField] private float acceleration;
 
-    Vector2 direction = Vector2.zero;
+    public Vector2 direction = Vector2.zero;
 
-    private SimpleMovement SimpleMove;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    InputAction move;
+
+    private void Start()
     {
-        SimpleMove = new SimpleMovement();
-        SimpleMove.Enable();
-        
+        move = InputManager.Instance.inputs.Keyboard.Drive;
     }
 
     // Update is called once per frame

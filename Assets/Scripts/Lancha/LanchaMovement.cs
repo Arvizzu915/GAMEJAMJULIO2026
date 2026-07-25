@@ -7,7 +7,7 @@ public class LanchaMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float acceleration, rotateSpeed;
 
-    
+    /*
     private InputAction rotate;
     private bool accelerating = false;
 
@@ -45,4 +45,5 @@ public class LanchaMovement : MonoBehaviour
             accelerating = false;
         }
     }
+    */
 }
