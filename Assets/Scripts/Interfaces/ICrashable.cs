@@ -8,7 +8,7 @@ public class ICrashable : MonoBehaviour
     
      private void Start()
     {
-        //LevelManager.singleton.OccupySpot(transform);
+        LevelManager.singleton.OccupySpot(transform);
     }
     
     private void OnCollisionEnter2D(Collision2D collision)

@@ -10,6 +10,10 @@ public class LevelManager : MonoBehaviour
     private List<Vector2> occupiedMapSpots = new List<Vector2>();
     private Tilemap mapTilemap;
 
+    [SerializeField] private GameObject[] levelPresets;
+
+    [SerializeField] GenericPool gentePool;
+
     private void Awake()
     {
         //This ensures there is only one instance of this class
@@ -22,6 +26,26 @@ public class LevelManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void Start()
+    {
+        GenerateLevel();
+    }
+
+    public void GenerateLevel()
+    {
+        int levelIndex = Random.Range(0, levelPresets.Length);
+        Instantiate(levelPresets[levelIndex]);
+
+        int numberOfPeople = Random.Range(15, 25);
+        for (int i = 0; i < numberOfPeople; i++)
+        {
+            Vector2 position = GetRandomAvailableSpot();
+
+            GameObject gente = gentePool.GetObject(position);
+            OccupySpot(gente.transform);
         }
     }
 
