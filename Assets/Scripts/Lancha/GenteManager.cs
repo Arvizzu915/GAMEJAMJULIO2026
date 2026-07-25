@@ -8,7 +8,7 @@ public class GenteManager : MonoBehaviour
     public int currentGente = 0, powerMeter = 0, powerLimit = 10;
 
     [SerializeField] private PowerUps powerUpManager;
-    [SerializeField] private Animator bubbleAnimator;
+    public Animator bubbleAnimator;
     private bool hasBubble;
 
     private void Awake()
@@ -35,7 +35,7 @@ public class GenteManager : MonoBehaviour
             ToggleBubble(false);
             return;
         }
-
+        Debug.Log("ME DUELE");
         if (currentGente <= 0)
         {
             //lose

@@ -744,6 +744,9 @@ MonoBehaviour:
   lanchaMovement: {fileID: 160060936}
   missilePool: {fileID: 1615111783}
   lifesaverPool: {fileID: 1372574084}
+  godModeTime: 10
+  objectSpawnerTime: 0.25
+  angleRotation: 30
 --- !u!114 &160060944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2067,6 +2070,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1009225198
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 430075828889920868, guid: 2117057247ba36b46a5f7e0fb6b5db80, type: 3}
+      propertyPath: m_Name
+      value: GodModeObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115788739231334168, guid: 2117057247ba36b46a5f7e0fb6b5db80, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.5652537
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115788739231334168, guid: 2117057247ba36b46a5f7e0fb6b5db80, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.422687
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115788739231334168, guid: 2117057247ba36b46a5f7e0fb6b5db80, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115788739231334168, guid: 2117057247ba36b46a5f7e0fb6b5db80, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115788739231334168, guid: 2117057247ba36b46a5f7e0fb6b5db80, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115788739231334168, guid: 2117057247ba36b46a5f7e0fb6b5db80, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115788739231334168, guid: 2117057247ba36b46a5f7e0fb6b5db80, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115788739231334168, guid: 2117057247ba36b46a5f7e0fb6b5db80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115788739231334168, guid: 2117057247ba36b46a5f7e0fb6b5db80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115788739231334168, guid: 2117057247ba36b46a5f7e0fb6b5db80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2117057247ba36b46a5f7e0fb6b5db80, type: 3}
 --- !u!1001 &1030427527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4179,6 +4239,7 @@ MonoBehaviour:
   - {fileID: 430075828889920868, guid: 276f0387b48f3a341a9c0c679d8791b5, type: 3}
   - {fileID: 6178192523564699517, guid: 8e518f3eda9991046a3081c5e857fd7a, type: 3}
   - {fileID: 430075828889920868, guid: 7a8abf5be9a705844b55370465817ed4, type: 3}
+  - {fileID: 430075828889920868, guid: 2117057247ba36b46a5f7e0fb6b5db80, type: 3}
   spawnRate: 3
   spawnRandomDifference: 1
 --- !u!4 &2087098772
@@ -4209,8 +4270,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PirateShipSpawner
   shipPrefab: {fileID: 4806061040660332175, guid: 771c6a83f3dfcf44baa2aa8892a4b209, type: 3}
-  spawnRate: 10
-  spawnRandomDifference: 3
+  spawnRate: 8
+  spawnRandomDifference: 5
 --- !u!114 &2087098774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4256,3 +4317,4 @@ SceneRoots:
   - {fileID: 1030427527}
   - {fileID: 1873749227}
   - {fileID: 2087098772}
+  - {fileID: 1009225198}
