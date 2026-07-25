@@ -345,7 +345,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423d1ac3c936797468f93e2cc42f29e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LanchaMovementSimple
+  boatModel: {fileID: 0}
   rb: {fileID: 160060938}
+  speedBoost: 1
   acceleration: 25000
   direction: {x: 0, y: 0}
 --- !u!114 &160060937
@@ -493,6 +495,7 @@ MonoBehaviour:
   powerMeter: 0
   powerLimit: 10
   powerUpManager: {fileID: 160060945}
+  bubbleAnimator: {fileID: 0}
 --- !u!114 &160060943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,6 +510,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LanchaManager
   genteManager: {fileID: 160060942}
   lanchaMovement: {fileID: 160060936}
+  missilePool: {fileID: 0}
+  lifesaverPool: {fileID: 0}
+  godModeTime: 5
+  objectSpawnerTime: 0.7
+  angleRotation: 10
+  speedBoost: 2
 --- !u!114 &160060945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,6 +532,7 @@ MonoBehaviour:
   powerLimit: 10
   rb: {fileID: 160060938}
   movement: {fileID: 160060936}
+  powerBar: {fileID: 0}
 --- !u!60 &160060946
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1161,6 +1171,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf2e631b7786f04bbdcb5b6fe5ba798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gente
+  drownTime: 8
+  animOverrides: []
+  animator: {fileID: 0}
 --- !u!50 &430622488
 Rigidbody2D:
   serializedVersion: 5
@@ -1341,6 +1354,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf2e631b7786f04bbdcb5b6fe5ba798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gente
+  drownTime: 8
+  animOverrides: []
+  animator: {fileID: 0}
 --- !u!50 &449238491
 Rigidbody2D:
   serializedVersion: 5
@@ -2234,6 +2250,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf2e631b7786f04bbdcb5b6fe5ba798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gente
+  drownTime: 8
+  animOverrides: []
+  animator: {fileID: 0}
 --- !u!50 &1066152386
 Rigidbody2D:
   serializedVersion: 5
@@ -2596,6 +2615,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf2e631b7786f04bbdcb5b6fe5ba798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gente
+  drownTime: 8
+  animOverrides: []
+  animator: {fileID: 0}
 --- !u!50 &1258041015
 Rigidbody2D:
   serializedVersion: 5
@@ -2776,6 +2798,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf2e631b7786f04bbdcb5b6fe5ba798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gente
+  drownTime: 8
+  animOverrides: []
+  animator: {fileID: 0}
 --- !u!50 &1316393738
 Rigidbody2D:
   serializedVersion: 5
@@ -3425,9 +3450,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.055555556
+    y: 0.18421052
     width: 1
-    height: 0.8888889
+    height: 0.6315789
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 112
@@ -3922,6 +3947,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf2e631b7786f04bbdcb5b6fe5ba798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gente
+  drownTime: 8
+  animOverrides: []
+  animator: {fileID: 0}
 --- !u!50 &1560984875
 Rigidbody2D:
   serializedVersion: 5
@@ -4628,7 +4656,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423d1ac3c936797468f93e2cc42f29e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LanchaMovementSimple
+  boatModel: {fileID: 0}
   rb: {fileID: 1708415321}
+  speedBoost: 1
   acceleration: 1
   direction: {x: 0, y: 0}
 --- !u!1 &1708425345
@@ -4799,6 +4829,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf2e631b7786f04bbdcb5b6fe5ba798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gente
+  drownTime: 8
+  animOverrides: []
+  animator: {fileID: 0}
 --- !u!50 &1775777342
 Rigidbody2D:
   serializedVersion: 5
@@ -20130,6 +20163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf2e631b7786f04bbdcb5b6fe5ba798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gente
+  drownTime: 8
+  animOverrides: []
+  animator: {fileID: 0}
 --- !u!50 &1897491040
 Rigidbody2D:
   serializedVersion: 5
@@ -20310,6 +20346,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf2e631b7786f04bbdcb5b6fe5ba798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gente
+  drownTime: 8
+  animOverrides: []
+  animator: {fileID: 0}
 --- !u!50 &1906237423
 Rigidbody2D:
   serializedVersion: 5
@@ -20490,6 +20529,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf2e631b7786f04bbdcb5b6fe5ba798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gente
+  drownTime: 8
+  animOverrides: []
+  animator: {fileID: 0}
 --- !u!50 &1950550136
 Rigidbody2D:
   serializedVersion: 5
@@ -20670,6 +20712,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf2e631b7786f04bbdcb5b6fe5ba798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gente
+  drownTime: 8
+  animOverrides: []
+  animator: {fileID: 0}
 --- !u!50 &2033540468
 Rigidbody2D:
   serializedVersion: 5
@@ -20917,55 +20962,55 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2957791228233148094, guid: 86a50f1a99a7877479eb64ec7078d8da, type: 3}
+    - target: {fileID: 5600849270266982027, guid: 888128c408dc2f24db4fac7000d77044, type: 3}
+      propertyPath: m_Name
+      value: ObstaclePreset6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200363216634048623, guid: 888128c408dc2f24db4fac7000d77044, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.01
       objectReference: {fileID: 0}
-    - target: {fileID: 2957791228233148094, guid: 86a50f1a99a7877479eb64ec7078d8da, type: 3}
+    - target: {fileID: 6200363216634048623, guid: 888128c408dc2f24db4fac7000d77044, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.01
       objectReference: {fileID: 0}
-    - target: {fileID: 2957791228233148094, guid: 86a50f1a99a7877479eb64ec7078d8da, type: 3}
+    - target: {fileID: 6200363216634048623, guid: 888128c408dc2f24db4fac7000d77044, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2957791228233148094, guid: 86a50f1a99a7877479eb64ec7078d8da, type: 3}
+    - target: {fileID: 6200363216634048623, guid: 888128c408dc2f24db4fac7000d77044, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2957791228233148094, guid: 86a50f1a99a7877479eb64ec7078d8da, type: 3}
+    - target: {fileID: 6200363216634048623, guid: 888128c408dc2f24db4fac7000d77044, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2957791228233148094, guid: 86a50f1a99a7877479eb64ec7078d8da, type: 3}
+    - target: {fileID: 6200363216634048623, guid: 888128c408dc2f24db4fac7000d77044, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2957791228233148094, guid: 86a50f1a99a7877479eb64ec7078d8da, type: 3}
+    - target: {fileID: 6200363216634048623, guid: 888128c408dc2f24db4fac7000d77044, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2957791228233148094, guid: 86a50f1a99a7877479eb64ec7078d8da, type: 3}
+    - target: {fileID: 6200363216634048623, guid: 888128c408dc2f24db4fac7000d77044, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2957791228233148094, guid: 86a50f1a99a7877479eb64ec7078d8da, type: 3}
+    - target: {fileID: 6200363216634048623, guid: 888128c408dc2f24db4fac7000d77044, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2957791228233148094, guid: 86a50f1a99a7877479eb64ec7078d8da, type: 3}
+    - target: {fileID: 6200363216634048623, guid: 888128c408dc2f24db4fac7000d77044, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5022489885792455005, guid: 86a50f1a99a7877479eb64ec7078d8da, type: 3}
-      propertyPath: m_Name
-      value: ObstaclePreset1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 86a50f1a99a7877479eb64ec7078d8da, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 888128c408dc2f24db4fac7000d77044, type: 3}
 --- !u!1 &2061724470
 GameObject:
   m_ObjectHideFlags: 0
