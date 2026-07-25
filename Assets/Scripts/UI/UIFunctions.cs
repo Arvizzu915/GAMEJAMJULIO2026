@@ -5,7 +5,7 @@ public class UIFunctions : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("MainLevel");
+        SceneManager.LoadScene("LevelManager");
     }
 
     public void ExitGame()
