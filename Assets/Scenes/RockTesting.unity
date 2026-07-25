@@ -346,6 +346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LanchaMovementSimple
   rb: {fileID: 160060938}
   acceleration: 25000
+  direction: {x: 0, y: 0}
 --- !u!114 &160060937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,6 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LanchaManager
   genteManager: {fileID: 160060942}
+  lanchaMovement: {fileID: 0}
 --- !u!60 &160060944
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4339,6 +4341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LanchaMovementSimple
   rb: {fileID: 1708415321}
   acceleration: 1
+  direction: {x: 0, y: 0}
 --- !u!1 &1708425345
 GameObject:
   m_ObjectHideFlags: 0
@@ -4672,7 +4675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1871841580
 Transform:
   m_ObjectHideFlags: 0

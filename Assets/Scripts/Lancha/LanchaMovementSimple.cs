@@ -18,7 +18,7 @@ public class LanchaMovementSimple : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        direction = SimpleMove.Keyboard.Drive.ReadValue<Vector2>();
+        direction = move.ReadValue<Vector2>();
         float t = .5f*Time.deltaTime;
         Quaternion targetRotation= Quaternion.Euler(new Vector3(0, 0, RotationDirection(direction)));
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation,300*Time.deltaTime);
