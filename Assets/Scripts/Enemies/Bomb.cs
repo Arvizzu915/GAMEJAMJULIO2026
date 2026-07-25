@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bomb : MonoBehaviour
+public class Bomb : MonoBehaviour, IDestructible
 {
     [SerializeField] private int damage;
     [SerializeField] private float activeTime;
@@ -29,5 +29,10 @@ public class Bomb : MonoBehaviour
     public void Despawn()
     {
         ObstaclePool.singleton.ReturnBombToPool(this);
+    }
+
+    public void DestroyObject()
+    {
+        Despawn();
     }
 }

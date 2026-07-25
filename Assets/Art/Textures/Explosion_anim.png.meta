@@ -1,16 +1,37 @@
 fileFormatVersion: 2
-guid: ce2b250347d00b2488d55566898156c8
+guid: 4d548fc96dfe56149b9cb249b0f0c180
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9136834448258697486
-    second: bubble_0
+      213: 2432370431139175395
+    second: Explosion_anim_0
   - first:
-      213: 1762854388791719718
-    second: bubble_1
+      213: 9201541306161034838
+    second: Explosion_anim_1
   - first:
-      213: -8014315233242688854
-    second: bubble_2
+      213: -4536962604685311186
+    second: Explosion_anim_2
+  - first:
+      213: 7352967335649830818
+    second: Explosion_anim_3
+  - first:
+      213: 1385535995402076999
+    second: Explosion_anim_4
+  - first:
+      213: 3486995675944616579
+    second: Explosion_anim_5
+  - first:
+      213: -2505258296383565233
+    second: Explosion_anim_6
+  - first:
+      213: -1543652299672333465
+    second: Explosion_anim_7
+  - first:
+      213: 9187963179916185205
+    second: Explosion_anim_8
+  - first:
+      213: -3993858829665005628
+    second: Explosion_anim_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -57,7 +78,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -107,7 +128,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -119,7 +140,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bubble_0
+      name: Explosion_anim_0
       rect:
         serializedVersion: 2
         x: 0
@@ -134,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2f6fcf37a71733180800000000000000
-      internalID: -9136834448258697486
+      spriteID: 3ebd636150481c120800000000000000
+      internalID: 2432370431139175395
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubble_1
+      name: Explosion_anim_1
       rect:
         serializedVersion: 2
         x: 32
@@ -156,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6273ba20abae67810800000000000000
-      internalID: 1762854388791719718
+      spriteID: 656ffcbe01172bf70800000000000000
+      internalID: 9201541306161034838
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubble_2
+      name: Explosion_anim_2
       rect:
         serializedVersion: 2
         x: 64
@@ -178,14 +199,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aa2519cc1ce67c090800000000000000
-      internalID: -8014315233242688854
+      spriteID: e2340848c887901c0800000000000000
+      internalID: -4536962604685311186
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubble_3
+      name: Explosion_anim_3
       rect:
         serializedVersion: 2
         x: 96
@@ -198,10 +219,76 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b7c5dc27fc280cc42b3c7a320918d1b6
-      internalID: 1992867978
+      spriteID: 2a7657685dcfa0660800000000000000
+      internalID: 7352967335649830818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion_anim_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 743457d95a96a3310800000000000000
+      internalID: 1385535995402076999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion_anim_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3828006a71c446030800000000000000
+      internalID: 3486995675944616579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion_anim_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4215755ad88b3dd0800000000000000
+      internalID: -2505258296383565233
       vertices: []
       indices: 
       edges: []
@@ -210,7 +297,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 139f882063c78354a967160f2afb88a6
+    spriteID: edb05eb111839d84a837b86995122e75
     internalID: 0
     vertices: []
     indices: 
@@ -220,12 +307,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":7.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      bubble_0: -9136834448258697486
-      bubble_1: 1762854388791719718
-      bubble_2: -8014315233242688854
-      bubble_3: 1992867978
+      Explosion_anim_0: 2432370431139175395
+      Explosion_anim_1: 9201541306161034838
+      Explosion_anim_2: -4536962604685311186
+      Explosion_anim_3: 7352967335649830818
+      Explosion_anim_4: 1385535995402076999
+      Explosion_anim_5: 3486995675944616579
+      Explosion_anim_6: -2505258296383565233
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

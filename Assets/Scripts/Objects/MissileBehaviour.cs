@@ -23,6 +23,13 @@ public class MissileBehaviour : MonoBehaviour
         if (collision.gameObject.TryGetComponent(out IDestructible destructible))
         {
             destructible.DestroyObject();
+            rb.linearVelocity = Vector3.zero;
+            animator.Play("Explosion");
         }
+    }
+
+    public void OnDespawn()
+    {
+        Destroy(gameObject);
     }
 }

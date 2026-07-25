@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PirateShip : MonoBehaviour
+public class PirateShip : MonoBehaviour, IDestructible
 {
     [SerializeField] private float speed, bombInterval;
     [SerializeField] SpriteRenderer sr;
@@ -65,5 +65,10 @@ public class PirateShip : MonoBehaviour
     private void Die()
     {
         Destroy(gameObject);
+    }
+
+    public void DestroyObject()
+    {
+        Die();
     }
 }

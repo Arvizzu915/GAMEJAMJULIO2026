@@ -765,8 +765,8 @@ MonoBehaviour:
   - {fileID: 622284248}
   - {fileID: 2005800732}
   - {fileID: 583279538}
+  currentObjectsUses: 000000000000000000000000
   currentUsedSlots: 0
-  currentObjectUses: 0
 --- !u!114 &160060945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -791,6 +791,7 @@ GameObject:
   m_Component:
   - component: {fileID: 225317919}
   - component: {fileID: 225317918}
+  - component: {fileID: 225317920}
   m_Layer: 0
   m_Name: GentePool
   m_TagString: Untagged
@@ -827,6 +828,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &225317920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225317917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62936fc4a0073334a9be0be23e26ef21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObstaclePool
+  bombPrefab: {fileID: 4016362827897151096, guid: ecb7ba9032496154ba869544ed0ec2dd, type: 3}
+  sharkPrefab: {fileID: 4016362827897151096, guid: d2a169b951b5fac4fb050030a8ce14d6, type: 3}
 --- !u!1 &277873483
 GameObject:
   m_ObjectHideFlags: 0
@@ -1290,7 +1305,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 160060941}
@@ -4128,6 +4143,88 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2087098770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2087098772}
+  - component: {fileID: 2087098771}
+  - component: {fileID: 2087098773}
+  - component: {fileID: 2087098774}
+  m_Layer: 0
+  m_Name: ObjectSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2087098771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087098770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f7cc334489a50e48a6863fa08657440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectSpawner
+  objectsPrefabs:
+  - {fileID: 430075828889920868, guid: 79e34db6a88d9f44d9bafb96157fe0d2, type: 3}
+  - {fileID: 430075828889920868, guid: 276f0387b48f3a341a9c0c679d8791b5, type: 3}
+  - {fileID: 6178192523564699517, guid: 8e518f3eda9991046a3081c5e857fd7a, type: 3}
+  - {fileID: 430075828889920868, guid: 7a8abf5be9a705844b55370465817ed4, type: 3}
+  spawnRate: 3
+  spawnRandomDifference: 1
+--- !u!4 &2087098772
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087098770}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.39553, y: 1.12103, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2087098773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087098770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec93143e83e93754bb1dc6b1ef0a827b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PirateShipSpawner
+  shipPrefab: {fileID: 4806061040660332175, guid: 771c6a83f3dfcf44baa2aa8892a4b209, type: 3}
+  spawnRate: 10
+  spawnRandomDifference: 3
+--- !u!114 &2087098774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087098770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada77e633536de14fb65718991b7bb6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SharkSpawner
+  spawnRate: 5
+  spawnRandomDifference: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4158,3 +4255,4 @@ SceneRoots:
   - {fileID: 14610533}
   - {fileID: 1030427527}
   - {fileID: 1873749227}
+  - {fileID: 2087098772}
