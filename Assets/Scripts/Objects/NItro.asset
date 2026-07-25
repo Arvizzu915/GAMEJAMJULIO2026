@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 534ac1726fd2d0848a9f6155df206bfc, type: 3}
   m_Name: NItro
   m_EditorClassIdentifier: Assembly-CSharp::Nitro
-  nitroForce: 5
+  maxUses: 5
+  nitroForce: 1000

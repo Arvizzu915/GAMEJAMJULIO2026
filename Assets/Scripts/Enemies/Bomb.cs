@@ -1,14 +1,20 @@
 using UnityEngine;
 
-public class Bomb : MonoBehaviour
+public class Bomb : MonoBehaviour, IDestructible
 {
-    [SerializeField] private int damage;
     [SerializeField] private float activeTime;
+    private Animator animator;
     private float activeTimeCount;
+
+    private void Awake()
+    {
+        TryGetComponent(out animator);
+    }
 
     public void StartLife()
     {
         gameObject.SetActive(true);
+        animator.Play("BombDrop");
         activeTimeCount = 0;
     }
 
@@ -16,6 +22,16 @@ public class Bomb : MonoBehaviour
     {
         activeTimeCount += Time.deltaTime;
         if (activeTimeCount >= activeTime)
-            ObstaclePool.singleton.ReturnBombToPool(this);
+            animator.Play("BombLeave");
+    }
+
+    public void Despawn()
+    {
+        ObstaclePool.singleton.ReturnBombToPool(this);
+    }
+
+    public void DestroyObject()
+    {
+        Despawn();
     }
 }

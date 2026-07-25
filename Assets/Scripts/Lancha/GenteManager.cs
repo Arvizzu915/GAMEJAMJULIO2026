@@ -2,10 +2,20 @@ using UnityEngine;
 
 public class GenteManager : MonoBehaviour
 {
+    public static GenteManager instance;
+
     [SerializeField] private SpriteRenderer[] genteSpots;
-    [SerializeField] private int currentGente = 0, powerMeter = 0, powerLimit = 10;
+    public int currentGente = 0, powerMeter = 0, powerLimit = 10;
 
     [SerializeField] private PowerUps powerUpManager;
+    public Animator bubbleAnimator;
+    private bool hasBubble;
+
+    private void Awake()
+    {
+        instance = this;
+        hasBubble = false;
+    }
 
     public void PickUpGente(int power)
     {
@@ -14,10 +24,18 @@ public class GenteManager : MonoBehaviour
         currentGente++;
 
         powerUpManager.GetPower(power);
+
+        LevelManager.singleton.peopleRescued++;
     }
 
     public void Crash(int Damage)
     {
+        if (hasBubble)
+        {
+            ToggleBubble(false);
+            return;
+        }
+        Debug.Log("ME DUELE");
         if (currentGente <= 0)
         {
             //lose
@@ -29,5 +47,17 @@ public class GenteManager : MonoBehaviour
             currentGente--;
             genteSpots[currentGente].enabled = false;
         }
+    }
+
+    public void ToggleBubble(bool getBubble)
+    {
+        hasBubble = getBubble;
+        if (getBubble)
+        {
+            bubbleAnimator.Play("BubbleIdle");
+            bubbleAnimator.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        }
+        else
+            bubbleAnimator.Play("BubblePop");
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PowerUps : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PowerUps : MonoBehaviour
     [SerializeField] LanchaMovementSimple movement;
 
     
+    Slider powerBar;
 
     private bool inRescueTime = false;
 
@@ -20,14 +22,15 @@ public class PowerUps : MonoBehaviour
 
         if (inRescueTime)
         {
-            powerMeter -= .5f*Time.deltaTime;
+            powerMeter -= Time.deltaTime;
+            UpdateBar();
         }
     }
 
     public void GetPower(int power)
     {
         powerMeter += power;
-
+        UpdateBar();
         if (powerMeter >= powerLimit)
         {
             RescueTime();
@@ -50,5 +53,11 @@ public class PowerUps : MonoBehaviour
         rb.linearDamping = .9f;
 
 
+    }
+
+    void UpdateBar()
+    {
+        if (powerBar == null) return;
+        powerBar.value = powerMeter;
     }
 }

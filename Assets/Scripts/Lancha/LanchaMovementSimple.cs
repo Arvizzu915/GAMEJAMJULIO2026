@@ -4,7 +4,8 @@ using UnityEngine.InputSystem;
 public class LanchaMovementSimple : MonoBehaviour
 {
     public Rigidbody2D rb;
-    [SerializeField] public float acceleration;
+    public float speedBoost = 1;
+    [SerializeField] private float acceleration;
 
     public Vector2 direction = Vector2.zero;
     Vector2 movedir;
@@ -49,7 +50,7 @@ public class LanchaMovementSimple : MonoBehaviour
 
     void Drive(Vector2 direction)
     {
-        rb.AddForce(direction*acceleration*Time.fixedDeltaTime);
+        rb.AddForce(direction * acceleration * speedBoost * Time.fixedDeltaTime);
     }
 
     float RotationAngle(Vector2 inputDirection)

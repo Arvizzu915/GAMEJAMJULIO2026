@@ -1,14 +1,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager singleton;
+
     public Vector2 mapLeftDownPoint, mapRightTopPoint;
     private List<Vector2> availableMapSpots = new List<Vector2>();
     private List<Vector2> occupiedMapSpots = new List<Vector2>();
     private Tilemap mapTilemap;
+
+    [SerializeField] private GameObject[] levelPresets;
+
+    [SerializeField] GenericPool gentePool;
+
+    public int peopleToRescue = 0, peopleRescued = 0;
+    public float timeInLevel = 0;
+    public bool inGame = false;
+    public float levelTime = 45;
+
+    [SerializeField] private GameObject rescueImage, timeImage;
 
     private void Awake()
     {
@@ -23,6 +37,105 @@ public class LevelManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+    }
+
+    private IEnumerator LevelTimer()
+    {
+        Debug.Log("level start");
+
+        yield return new WaitForSeconds(levelTime);
+
+        Debug.Log("level finish");
+
+        StartCoroutine(WinLevelScreen());
+    }
+
+    private void OnEnable()
+    {
+        GenerateLevel();
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private bool generateAfterLoad;
+
+
+    private void Update()
+    {
+        if (inGame)
+        {
+            timeInLevel += Time.deltaTime;
+
+            if (peopleRescued >= peopleToRescue)
+            {
+                StartCoroutine(WinLevelScreen());
+            }
+        }
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name != "LevelManager")
+            return;
+
+        rescueImage = FindFirstObjectByType<RescueImageReference>(FindObjectsInactive.Include).gameObject;
+        timeImage = FindFirstObjectByType<TimeImage>(FindObjectsInactive.Include).gameObject;
+
+        if (generateAfterLoad)
+        {
+            generateAfterLoad = false;
+            GenerateLevel();
+        }
+    }
+
+    private IEnumerator WinLevelScreen()
+    {
+        Debug.Log(timeImage);
+        Debug.Log(ScoreManager.instance);
+        Debug.Log(GenteManager.instance);
+
+        timeImage.SetActive(true);
+
+        inGame = false;
+        ScoreManager.instance.RegisterLevelData(GenteManager.instance.currentGente, timeInLevel);
+
+        yield return new WaitForSeconds(2);
+
+        generateAfterLoad = true;
+        SceneManager.LoadScene("LevelManager");
+    }
+
+    public void GenerateLevel()
+    {
+        rescueImage.SetActive(true);
+
+        timeInLevel = 0;
+        peopleRescued = 0;
+
+        int levelIndex = Random.Range(0, levelPresets.Length);
+        Instantiate(levelPresets[levelIndex]);
+
+
+        int numberOfPeople = Random.Range(1, 5);
+        peopleToRescue = numberOfPeople;
+
+        for (int i = 0; i < numberOfPeople; i++)
+        {
+            Vector2 position = GetRandomAvailableSpot();
+
+            GameObject gente = gentePool.GetObject(position);
+            OccupySpot(gente.transform);
+        }
+
+        inGame = true;
+
+        StartCoroutine(LevelTimer());
     }
 
     public float GetRandomRow()

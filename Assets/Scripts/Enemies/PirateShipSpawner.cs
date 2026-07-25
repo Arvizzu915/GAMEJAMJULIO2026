@@ -25,19 +25,22 @@ public class PirateShipSpawner : MonoBehaviour
     {
         int leftOrRight = Random.Range(0, 2);
         float xPos = 0;
+        float diePos = 0;
         bool isRight;
         if (leftOrRight == 0)
         {
             xPos = LevelManager.singleton.mapLeftDownPoint.x - 1;
+            diePos = LevelManager.singleton.mapRightTopPoint.x + 1;
             isRight = true;
         }
         else
         {
             xPos = LevelManager.singleton.mapRightTopPoint.x + 1;
+            diePos = LevelManager.singleton.mapLeftDownPoint.x - 1;
             isRight = false;
         }
         Vector2 spawnPos = new Vector2(xPos, LevelManager.singleton.GetRandomRow());
         GameObject newShip = Instantiate(shipPrefab, spawnPos, Quaternion.identity);
-        newShip.GetComponent<PirateShip>().OnSpawn(isRight);
+        newShip.GetComponent<PirateShip>().OnSpawn(isRight, diePos);
     }
 }

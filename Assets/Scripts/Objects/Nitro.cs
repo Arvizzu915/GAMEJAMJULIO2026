@@ -7,6 +7,7 @@ public class Nitro : ObjectSO
 
     public override void Use(LanchaManager manager)
     {
-        manager.lanchaMovement.rb.AddForce(manager.lanchaMovement.direction * nitroForce, ForceMode2D.Impulse);
+        Debug.Log("Nitro");
+        manager.lanchaMovement.rb.AddForce(manager.transform.up * nitroForce, ForceMode2D.Impulse);
     }
 }
