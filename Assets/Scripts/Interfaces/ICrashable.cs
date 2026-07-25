@@ -4,6 +4,13 @@ public class ICrashable : MonoBehaviour
 {
     [SerializeField] private int damage;
 
+
+    
+     private void Start()
+    {
+        //LevelManager.singleton.OccupySpot(transform);
+    }
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("crah");
@@ -13,7 +20,7 @@ public class ICrashable : MonoBehaviour
             CrashWithPlayer(collision.gameObject.GetComponent<LanchaManager>());
         }
     }
-
+    
     public virtual void CrashWithPlayer(LanchaManager lancha)
     {
         lancha.genteManager.Crash(damage);
