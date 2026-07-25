@@ -8,11 +8,13 @@ public class GenteManager : MonoBehaviour
     public int currentGente = 0, powerMeter = 0, powerLimit = 10;
 
     [SerializeField] private PowerUps powerUpManager;
-    public bool hasBubble = false;
+    [SerializeField] private Animator bubbleAnimator;
+    private bool hasBubble;
 
     private void Awake()
     {
         instance = this;
+        hasBubble = false;
     }
 
     public void PickUpGente(int power)
@@ -30,9 +32,10 @@ public class GenteManager : MonoBehaviour
     {
         if (hasBubble)
         {
-            hasBubble = false;
+            ToggleBubble(false);
             return;
         }
+
         if (currentGente <= 0)
         {
             //lose
@@ -44,5 +47,17 @@ public class GenteManager : MonoBehaviour
             currentGente--;
             genteSpots[currentGente].enabled = false;
         }
+    }
+
+    public void ToggleBubble(bool getBubble)
+    {
+        hasBubble = getBubble;
+        if (getBubble)
+        {
+            bubbleAnimator.Play("BubbleIdle");
+            bubbleAnimator.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        }
+        else
+            bubbleAnimator.Play("BubblePop");
     }
 }
