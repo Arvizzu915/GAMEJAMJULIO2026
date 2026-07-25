@@ -7,6 +7,7 @@ public class PowerUps : MonoBehaviour
 
     [SerializeField] Rigidbody2D rb;
     [SerializeField] LanchaMovementSimple movement;
+    [SerializeField] AudioSource powerAudio;
 
     
     [SerializeField] Slider powerBar;
@@ -39,6 +40,7 @@ public class PowerUps : MonoBehaviour
 
     private void RescueTime()
     {
+        powerAudio.Play();
         powerMeter = powerLimit;
         inRescueTime = true;
         movement.acceleration = 40000;
