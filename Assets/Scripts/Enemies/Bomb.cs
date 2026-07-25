@@ -25,6 +25,12 @@ public class Bomb : MonoBehaviour, IDestructible
             animator.Play("BombLeave");
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out GenteManager vida))
+            animator.Play("Explosion");
+    }
+
     public void Despawn()
     {
         ObstaclePool.singleton.ReturnBombToPool(this);
