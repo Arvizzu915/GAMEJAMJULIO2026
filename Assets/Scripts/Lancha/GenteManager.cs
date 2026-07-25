@@ -6,6 +6,7 @@ public class GenteManager : MonoBehaviour
     [SerializeField] private int currentGente = 0, powerMeter = 0, powerLimit = 10;
 
     [SerializeField] private PowerUps powerUpManager;
+    public bool hasBubble = false;
 
     public void PickUpGente(int power)
     {
@@ -18,6 +19,11 @@ public class GenteManager : MonoBehaviour
 
     public void Crash(int Damage)
     {
+        if (hasBubble)
+        {
+            hasBubble = false;
+            return;
+        }
         if (currentGente <= 0)
         {
             //lose

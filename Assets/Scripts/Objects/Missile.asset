@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98413c28b0853df419993f2242cedc25, type: 3}
   m_Name: Missile
   m_EditorClassIdentifier: Assembly-CSharp::Missile
+  maxUses: 3

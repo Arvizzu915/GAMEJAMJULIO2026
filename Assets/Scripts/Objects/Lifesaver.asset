@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 534ac1726fd2d0848a9f6155df206bfc, type: 3}
-  m_Name: NItro
-  m_EditorClassIdentifier: Assembly-CSharp::Nitro
-  maxUses: 5
-  nitroForce: 1000
+  m_Script: {fileID: 11500000, guid: 50608f3c3f31f884394b33bc87c5b18a, type: 3}
+  m_Name: Lifesaver
+  m_EditorClassIdentifier: Assembly-CSharp::LifesaverSO
+  maxUses: 4
