@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98413c28b0853df419993f2242cedc25, type: 3}
-  m_Name: Missile
-  m_EditorClassIdentifier: Assembly-CSharp::Missile
-  maxUses: 3
+  m_Script: {fileID: 11500000, guid: cfb43067b4af1d54f9a2f3e5fad51ab4, type: 3}
+  m_Name: Bubble
+  m_EditorClassIdentifier: Assembly-CSharp::BubbleSO
+  maxUses: 2
