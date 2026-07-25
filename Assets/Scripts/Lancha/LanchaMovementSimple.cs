@@ -18,7 +18,12 @@ public class LanchaMovementSimple : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        direction = move.ReadValue<Vector2>();
+        direction = SimpleMove.Keyboard.Drive.ReadValue<Vector2>();
+        float t = .5f*Time.deltaTime;
+        Quaternion targetRotation= Quaternion.Euler(new Vector3(0, 0, RotationDirection(direction)));
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation,300*Time.deltaTime);
+        
+        
     }
 
     private void FixedUpdate()
@@ -29,5 +34,13 @@ public class LanchaMovementSimple : MonoBehaviour
     void Drive(Vector2 direction)
     {
         rb.AddForce(direction*acceleration*Time.fixedDeltaTime);
+    }
+
+    float RotationDirection(Vector2 direction)
+    {
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        return angle;
     }
 }
