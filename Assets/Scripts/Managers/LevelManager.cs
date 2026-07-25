@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class LevelManager : MonoBehaviour
 {
@@ -13,6 +15,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject[] levelPresets;
 
     [SerializeField] GenericPool gentePool;
+
+    private int peopleToRescue = 0, peopleRescued = 0;
+    private bool inGame = false;
 
     private void Awake()
     {
@@ -34,6 +39,29 @@ public class LevelManager : MonoBehaviour
         GenerateLevel();
     }
 
+    private void Update()
+    {
+        if (inGame)
+        {
+            if (peopleRescued >= peopleToRescue)
+            {
+                WinLevel();
+            }
+        }
+    }
+
+    private void WinLevel()
+    {
+        StartCoroutine(WinLevelScreen());
+    }
+
+    private IEnumerator WinLevelScreen()
+    {
+        yield return new WaitForSeconds(2);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public void GenerateLevel()
     {
         int levelIndex = Random.Range(0, levelPresets.Length);
@@ -47,6 +75,8 @@ public class LevelManager : MonoBehaviour
             GameObject gente = gentePool.GetObject(position);
             OccupySpot(gente.transform);
         }
+
+        inGame = true;
     }
 
     public float GetRandomRow()
