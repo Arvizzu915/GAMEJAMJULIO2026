@@ -1,25 +1,10 @@
 fileFormatVersion: 2
-guid: ddd980a31ee47b34dae57b1e0672527a
+guid: f4c33ec18e8bcfb43ba351df7b019549
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7462316434291467223
-    second: sharkemerge_0
-  - first:
-      213: -5241555936206214544
-    second: sharkemerge_1
-  - first:
-      213: 2214499519554079222
-    second: sharkemerge_2
-  - first:
-      213: 4757045375203632722
-    second: sharkemerge_3
-  - first:
-      213: 1702518432758306238
-    second: sharkemerge_4
-  - first:
-      213: 1374574714768343100
-    second: sharkemerge_5
+      213: -7995072500856005371
+    second: BarcoPirata_sheet_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,7 +113,183 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sharkemerge_0
+      name: BarcoPirata_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50ddbf09bebcb0190800000000000000
+      internalID: -7995072500856005371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarcoPirata_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7b584914faf9ee4c99be1aab887afd9
+      internalID: -1072635167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarcoPirata_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7048493b8f980194999daa2d2f96208b
+      internalID: 188660148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarcoPirata_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 626a7750ccb73ab4f92e3d8bc891275b
+      internalID: 1082898413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarcoPirata_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9af61601b926b84bbce5294965ed128
+      internalID: -214486427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarcoPirata_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3145defe82c050643a35e34e5aa2cecc
+      internalID: -230466155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarcoPirata_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea524a2d8374ff649927da0e548a93b8
+      internalID: 600992134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarcoPirata_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e31fe69cfff1164db9ecb9263ba1828
+      internalID: -1467680995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarcoPirata_sheet_8
       rect:
         serializedVersion: 2
         x: 0
@@ -141,16 +302,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7d3a08b82497f8760800000000000000
-      internalID: 7462316434291467223
+      spriteID: 78188fa033f5df441a69f3a97dd68f7c
+      internalID: 323366018
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sharkemerge_1
+      name: BarcoPirata_sheet_9
       rect:
         serializedVersion: 2
         x: 32
@@ -163,98 +324,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 07aa610a5a04247b0800000000000000
-      internalID: -5241555936206214544
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sharkemerge_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6f94b42849b7bbe10800000000000000
-      internalID: 2214499519554079222
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sharkemerge_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2566d69909b640240800000000000000
-      internalID: 4757045375203632722
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sharkemerge_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eb51d188e7f80a710800000000000000
-      internalID: 1702518432758306238
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sharkemerge_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c3040079b68731310800000000000000
-      internalID: 1374574714768343100
+      spriteID: 9b47ff5c6b16a024ab0aa85d3cecafaf
+      internalID: -1733049878
       vertices: []
       indices: 
       edges: []
@@ -263,7 +336,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8b8f94b644d3f8143a7778fa0ff1ed3d
+    spriteID: 21c2d7203825eac4ea75652ef4816cbb
     internalID: 0
     vertices: []
     indices: 
@@ -273,14 +346,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":2.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      sharkemerge_0: 7462316434291467223
-      sharkemerge_1: -5241555936206214544
-      sharkemerge_2: 2214499519554079222
-      sharkemerge_3: 4757045375203632722
-      sharkemerge_4: 1702518432758306238
-      sharkemerge_5: 1374574714768343100
+      BarcoPirata_sheet_0: -7995072500856005371
+      BarcoPirata_sheet_1: -1072635167
+      BarcoPirata_sheet_2: 188660148
+      BarcoPirata_sheet_3: 1082898413
+      BarcoPirata_sheet_4: -214486427
+      BarcoPirata_sheet_5: -230466155
+      BarcoPirata_sheet_6: 600992134
+      BarcoPirata_sheet_7: -1467680995
+      BarcoPirata_sheet_8: 323366018
+      BarcoPirata_sheet_9: -1733049878
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
