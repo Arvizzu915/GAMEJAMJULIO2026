@@ -47,6 +47,7 @@ public class PowerUps : MonoBehaviour
 
     void UpdateBar()
     {
+        if (powerBar == null) return;
         powerBar.value = powerMeter;
     }
 }

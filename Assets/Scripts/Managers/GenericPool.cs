@@ -14,8 +14,6 @@ public class GenericPool : MonoBehaviour
     private void Awake()
     {
         CreateObjects();
-
-        DontDestroyOnLoad(gameObject);
     }
 
     private void CreateObjects()
