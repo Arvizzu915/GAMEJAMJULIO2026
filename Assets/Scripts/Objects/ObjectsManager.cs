@@ -9,7 +9,9 @@ public class ObjectsManager : MonoBehaviour
 
     public GameObject[] objectSlotsUI;
 
-    public int currentUsedSlots = 0, currentObjectUses;
+    public int[] currentObjectsUses;
+
+    public int currentUsedSlots = 0;
 
     private void Start()
     {
@@ -22,11 +24,11 @@ public class ObjectsManager : MonoBehaviour
         {
             for (int i = 0; i < currentObject.Length; i++)
             {
-                if (currentObject[i] != null && currentObjectUses > 0)
+                if (currentObject[i] != null && currentObjectsUses[i] > 0)
                 {
                     currentObject[i].Use(lanchaManager);
-                    currentObjectUses--;
-                    if (currentObjectUses <= 0)
+                    currentObjectsUses[i]--;
+                    if (currentObjectsUses[i] <= 0)
                     {
                         currentObject[i] = null;
                         currentUsedSlots--;
@@ -59,7 +61,7 @@ public class ObjectsManager : MonoBehaviour
                 currentObject[i] = weapon;
                 objectSlotsUI[i].SetActive(true);
                 currentUsedSlots++;
-                currentObjectUses = weapon.maxUses;
+                currentObjectsUses[i] = weapon.maxUses;
                 return;
             }
         }

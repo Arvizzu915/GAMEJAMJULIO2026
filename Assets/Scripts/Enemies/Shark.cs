@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Shark : MonoBehaviour
+public class Shark : MonoBehaviour, IDestructible
 {
     [SerializeField] private int damage;
     [SerializeField] private float activeTime;
@@ -31,5 +31,10 @@ public class Shark : MonoBehaviour
     public void OnDespawn()
     {
         ObstaclePool.singleton.ReturnSharkToPool(this);
+    }
+
+    public void DestroyObject()
+    {
+        OnDespawn();
     }
 }
