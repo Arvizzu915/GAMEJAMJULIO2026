@@ -9,7 +9,7 @@ AnimatorOverrideController:
   m_Name: GenteOVerride3
   m_Controller: {fileID: 9100000, guid: 7c99313d6349b9a4990437cb50689f1b, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: 1e22b75675b8c8e4a81cedb346f7f3d8, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 50c7a338f1c7a354aaa9e5f9c30676a9, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: b9312cf78da0c9345bc8bf83ab03e256, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: ab709ce93befe274faac0fc29bb316e4, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2e083ec60f3ca2f44be4a0dd8467c146, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 9deb03a5997a1ab478e882c05de9ac34, type: 2}
