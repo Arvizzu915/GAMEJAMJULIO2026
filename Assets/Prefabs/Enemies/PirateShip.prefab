@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2410979022169593154}
   - component: {fileID: 4147356797031689020}
   - component: {fileID: 1026195407226699657}
+  - component: {fileID: 6583683655627864543}
   m_Layer: 0
   m_Name: PirateShip
   m_TagString: Untagged
@@ -124,6 +125,19 @@ MonoBehaviour:
   bombInterval: 3
   sr: {fileID: 2664884199314429827}
   animator: {fileID: 8674649731095766046}
+--- !u!114 &6583683655627864543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4806061040660332175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e208d7c22509d498f1af082d3e2662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ICrashable
+  damage: 1
 --- !u!1 &7412664552265116942
 GameObject:
   m_ObjectHideFlags: 0

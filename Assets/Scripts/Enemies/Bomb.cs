@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour, IDestructible
 {
-    [SerializeField] private int damage;
     [SerializeField] private float activeTime;
     private Animator animator;
     private float activeTimeCount;

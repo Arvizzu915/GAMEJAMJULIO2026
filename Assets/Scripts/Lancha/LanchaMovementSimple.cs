@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class LanchaMovementSimple : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public float speedBoost = 1;
     [SerializeField] private float acceleration;
 
     public Vector2 direction = Vector2.zero;
@@ -33,7 +34,7 @@ public class LanchaMovementSimple : MonoBehaviour
 
     void Drive(Vector2 direction)
     {
-        rb.AddForce(direction*acceleration*Time.fixedDeltaTime);
+        rb.AddForce(direction * acceleration * speedBoost * Time.fixedDeltaTime);
     }
 
     float RotationDirection(Vector2 direction)
