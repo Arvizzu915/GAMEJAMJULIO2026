@@ -13,6 +13,8 @@ public class ObjectsManager : MonoBehaviour
 
     public int currentUsedSlots = 0;
 
+    [SerializeField] AudioSource grabObject;
+
     private void Start()
     {
         InputManager.Instance.inputs.Keyboard.Use.performed += UseObject;
@@ -47,6 +49,7 @@ public class ObjectsManager : MonoBehaviour
 
         if (collision.CompareTag("Object"))
         {
+            grabObject.Play();
             SetObjectSlot(collision.GetComponent<Weapon>().objectSO);
             collision.gameObject.SetActive(false);
         }

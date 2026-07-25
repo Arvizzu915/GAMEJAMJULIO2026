@@ -5,11 +5,13 @@ public class MissileBehaviour : MonoBehaviour
     [SerializeField] private float speed;
     private Rigidbody2D rb;
     private Animator animator;
+     AudioSource explosion;
 
     private void Awake()
     {
         TryGetComponent(out rb);
         TryGetComponent(out animator);
+        TryGetComponent(out explosion);
     }
 
     public void OnSpawn(Vector3 shootDir)
