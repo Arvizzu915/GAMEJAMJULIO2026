@@ -8,14 +8,14 @@ public class PirateShip : MonoBehaviour
     [SerializeField] SpriteRenderer sr;
     [SerializeField] Animator animator;
     private Rigidbody2D rb;
-    private float bombIntervalCount, orientation;
+    private float bombIntervalCount, orientation, diePos;
 
     private void Awake()
     {
         TryGetComponent(out rb);
     }
 
-    public void OnSpawn(bool isGoingRight)
+    public void OnSpawn(bool isGoingRight, float diePos)
     {
         if (isGoingRight)
         {
@@ -29,6 +29,7 @@ public class PirateShip : MonoBehaviour
             sr.flipX = false;
         }
         animator.Play("ShipIdle");
+        this.diePos = diePos;
         bombIntervalCount = 0f;
     }
 
@@ -45,10 +46,24 @@ public class PirateShip : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+        CheckDeath();
     }
 
     private void Move()
     {
         rb.MovePosition(transform.position + transform.right * orientation * speed * Time.fixedDeltaTime);
+    }
+
+    private void CheckDeath()
+    {
+        if (orientation == 1f && transform.position.x >= diePos)
+            Die();
+        else if (orientation == -1f && transform.position.x <= diePos)
+            Die();
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
     }
 }
