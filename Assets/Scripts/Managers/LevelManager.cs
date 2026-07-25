@@ -16,8 +16,9 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] GenericPool gentePool;
 
-    private int peopleToRescue = 0, peopleRescued = 0;
-    private bool inGame = false;
+    public int peopleToRescue = 0, peopleRescued = 0;
+    public float timeInLevel = 0;
+    public bool inGame = false;
 
     private void Awake()
     {
@@ -32,42 +33,69 @@ public class LevelManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
     }
 
-    private void Start()
+    private void OnEnable()
     {
         GenerateLevel();
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private bool generateAfterLoad;
+
 
     private void Update()
     {
         if (inGame)
         {
+            timeInLevel += Time.deltaTime;
+
             if (peopleRescued >= peopleToRescue)
             {
-                WinLevel();
+                StartCoroutine(WinLevelScreen());
             }
         }
     }
 
-    private void WinLevel()
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        StartCoroutine(WinLevelScreen());
+        if (generateAfterLoad && scene.name == "LevelManager")
+        {
+            generateAfterLoad = false;
+            GenerateLevel();
+        }
     }
 
     private IEnumerator WinLevelScreen()
     {
+        inGame = false;
+        ScoreManager.instance.RegisterLevelData(GenteManager.instance.currentGente, timeInLevel);
+
         yield return new WaitForSeconds(2);
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        generateAfterLoad = true;
+        SceneManager.LoadScene("Level");
     }
 
     public void GenerateLevel()
     {
+        timeInLevel = 0;
+        peopleRescued = 0;
+
         int levelIndex = Random.Range(0, levelPresets.Length);
         Instantiate(levelPresets[levelIndex]);
 
-        int numberOfPeople = Random.Range(15, 25);
+
+        int numberOfPeople = Random.Range(1, 5);
+        peopleToRescue = numberOfPeople;
+
         for (int i = 0; i < numberOfPeople; i++)
         {
             Vector2 position = GetRandomAvailableSpot();

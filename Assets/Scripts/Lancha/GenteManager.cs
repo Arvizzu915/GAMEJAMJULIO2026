@@ -2,10 +2,17 @@ using UnityEngine;
 
 public class GenteManager : MonoBehaviour
 {
+    public static GenteManager instance;
+
     [SerializeField] private SpriteRenderer[] genteSpots;
-    [SerializeField] private int currentGente = 0, powerMeter = 0, powerLimit = 10;
+    public int currentGente = 0, powerMeter = 0, powerLimit = 10;
 
     [SerializeField] private PowerUps powerUpManager;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     public void PickUpGente(int power)
     {
@@ -14,6 +21,8 @@ public class GenteManager : MonoBehaviour
         currentGente++;
 
         powerUpManager.GetPower(power);
+
+        LevelManager.singleton.peopleRescued++;
     }
 
     public void Crash(int Damage)
